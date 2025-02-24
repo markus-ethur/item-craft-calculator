@@ -1,4 +1,4 @@
 import * as basic from "./items/basic";
-import * as blacksmith from "./items/blacksmith";
+import * as fangs from "./items/fangs";
 
-export { basic, blacksmith };
+export { basic, fangs };
