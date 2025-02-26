@@ -19,42 +19,52 @@ import { needThisAmount } from "./helper/calc";
 
 let haveMats = {
   [basic.an.name]: 217, // Adamantite Nugget
-  [basic.ab.name]: 2090, // Animal Bone
-  [basic.ans.name]: 7912, // Animal Skin
-  [basic.amh.name]: 12, // Arcana Mace Head
-  [basic.af.name]: 163, // Asofe
-  [basic.bh.name]: 362, // Braided Hemp
-  [basic.ch.name]: 4353, // Charcoal
-  [co.name]: 2645, // Coal
-  [basic.cbp.name]: 432, // Coarse Bone Powder
-  [ck.name]: 303, // Cokes
+  [basic.ab.name]: 9, // Animal Bone
+  [basic.ans.name]: 8462, // Animal Skin
+  [basic.amh.name]: 51, // Arcana Mace Head
+  [basic.af.name]: 170, // Asofe
+  [basic.bh.name]: 371, // Braided Hemp
+  [basic.ch.name]: 4383, // Charcoal
+  [co.name]: 2706, // Coal
+  [basic.cbp.name]: 1333, // Coarse Bone Powder
+  [ck.name]: 252, // Cokes
   // compound braid ??
-  [basic.cor.name]: 481, // Cord
-  [basic.dmp.name]: 175, // Durable Metal Plate
+  [basic.cor.name]: 545, // Cord
+  [basic.dmp.name]: 177, // Durable Metal Plate
   // crafted leather
-  [basic.er.name]: 248, // Enria
+  [basic.er.name]: 251, // Enria
   [basic.hgs.name]: 186, // High Grade Suede
   // leather
-  [basic.io.name]: 2887, // Iron Ore
-  [basic.mf.name]: 3463, // Metallic Fiber
-  [basic.mt.name]: 1741, // Metallic Thread
-  [mo.name]: 14, // Mithril Ore
-  // mold
-  [mg.name]: 67, // Mold Glue
-  [mh.name]: 206, // Mold Hardener
-  [ml.name]: 63, // Mold Lubricant
-  [basic.oo.name]: 14, // Oriharukon Ore
-  [basic.sn.name]: 3227, // Silver Nugget
-  [basic.st.name]: 49, // Steel
-  [basic.stt.name]: 4131, // Stem
-  [basic.sop.name]: 90, // Stone of Purity
-  [basic.su.name]: 2757, // Suede
-  [basic.ton.name]: 569, // Tons
-  [basic.tr.name]: 16341, // Thread
-  [basic.va.name]: 690, // Varnish
+  [basic.io.name]: 3015, // Iron Ore
+  [basic.mf.name]: 3481, // Metallic Fiber
+  [basic.mt.name]: 1746, // Metallic Thread
 
+  [basic.mitalloy.name]: 30 + 432, // Mithril Alloy
+  [mo.name]: 4, // Mithril Ore
+  // mold
+  [mg.name]: 74, // Mold Glue
+  [mh.name]: 219, // Mold Hardener
+  [ml.name]: 65, // Mold Lubricant
+  [basic.oo.name]: 0, // Oriharukon Ore
+
+  [basic.silverMold.name]: 2, // Silver Mold
+
+  [basic.sn.name]: 3316, // Silver Nugget
+  [basic.st.name]: 0, // Steel
+
+  [basic.steelMold.name]: 3, // Steel Mold
+
+  [basic.stt.name]: 4383, // Stem
+  [basic.sop.name]: 109, // Stone of Purity
+  [basic.su.name]: 2803, // Suede
+
+  [basic.sck.name]: 21 + 441, // Synthetic Cokes
+
+  [basic.ton.name]: 580, // Tons
+  [basic.tr.name]: 16801, // Thread
+  [basic.va.name]: 715, // Varnish
+  [vop.name]: 645,
   [warholder.name]: 4,
-  [vop.name]: 674,
 
   // buy
   [basic.ttRingGem.name]: 102, // 40k
@@ -129,9 +139,11 @@ craftAMsAndTTs();
 
 // process.exit(0);
 // needThisAmount(basic.dmp, 924);
-needThisAmount(fangs.sckFang, 462);
-needThisAmount(fangs.mitalloyFang, 462);
-needThisAmount(fangs.dmpFang, 924);
+needThisAmount(fangs.sckFang, 441);
+needThisAmount(fangs.mitalloyFang, 432);
+// needThisAmount(fangs.dmpFang, 924);
+
+// 5764 + 2937 = 8701
 
 // console.log(totalMats);
 
