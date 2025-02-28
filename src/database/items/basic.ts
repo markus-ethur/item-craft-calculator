@@ -47,7 +47,7 @@ export const vop = new Item("Varnish of Purity", ItemType.CRAFTED_MATS, {
   items: [
     { item: va, q: 3 },
     { item: sop, q: 1 },
-    { item: cbp, q: 1 },
+    { item: cbp, q: 3 },
   ],
   r: 1,
 });
@@ -111,9 +111,7 @@ export const mf = new Item("Metallic Fiber", ItemType.CRAFTED_MATS, {
   ],
   r: 20,
 });
-
-// Blacksmith Parts
-export const mitalloy = new Item("Mithril Alloy", ItemType.BLACKSMITH, {
+export const mitalloy = new Item("Mithril Alloy", ItemType.CRAFTED_MATS, {
   items: [
     { item: mo, q: 1 },
     { item: vop, q: 1 },
@@ -121,6 +119,8 @@ export const mitalloy = new Item("Mithril Alloy", ItemType.BLACKSMITH, {
   ],
   r: 1,
 });
+
+// Blacksmith Parts
 export const maeholder = new Item("Maestro Holder", ItemType.BLACKSMITH, {
   items: [
     { item: vop, q: 10 },

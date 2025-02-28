@@ -18,52 +18,52 @@ import {
 import { needThisAmount } from "./helper/calc";
 
 let haveMats = {
-  [basic.an.name]: 217, // Adamantite Nugget
-  [basic.ab.name]: 9, // Animal Bone
-  [basic.ans.name]: 8462, // Animal Skin
-  [basic.amh.name]: 51, // Arcana Mace Head
-  [basic.af.name]: 170, // Asofe
-  [basic.bh.name]: 371, // Braided Hemp
-  [basic.ch.name]: 4383, // Charcoal
-  [co.name]: 2706, // Coal
-  [basic.cbp.name]: 1333, // Coarse Bone Powder
-  [ck.name]: 252, // Cokes
+  [basic.an.name]: 224, // Adamantite Nugget
+  [basic.ab.name]: 3167, // Animal Bone
+  [basic.ans.name]: 9445, // Animal Skin
+  [basic.amh.name]: 53, // Arcana Mace Head
+  [basic.af.name]: 194, // Asofe
+  [basic.bh.name]: 430, // Braided Hemp
+  [basic.ch.name]: 2149, // Charcoal
+  [co.name]: 128, // Coal
+  [basic.cbp.name]: 1524, // Coarse Bone Powder
+  [ck.name]: 1203, // Cokes
   // compound braid ??
-  [basic.cor.name]: 545, // Cord
-  [basic.dmp.name]: 177, // Durable Metal Plate
+  [basic.cor.name]: 592, // Cord
+  [basic.dmp.name]: 239, // Durable Metal Plate
   // crafted leather
-  [basic.er.name]: 251, // Enria
-  [basic.hgs.name]: 186, // High Grade Suede
+  [basic.er.name]: 260, // Enria
+  [basic.hgs.name]: 239, // High Grade Suede
   // leather
-  [basic.io.name]: 3015, // Iron Ore
-  [basic.mf.name]: 3481, // Metallic Fiber
-  [basic.mt.name]: 1746, // Metallic Thread
+  [basic.io.name]: 534, // Iron Ore
+  [basic.mf.name]: 3806, // Metallic Fiber
+  [basic.mt.name]: 2115, // Metallic Thread
 
-  [basic.mitalloy.name]: 30 + 432, // Mithril Alloy
-  [mo.name]: 4, // Mithril Ore
+  [basic.mitalloy.name]: 31, // Mithril Alloy
+  [mo.name]: 16, // Mithril Ore
   // mold
-  [mg.name]: 74, // Mold Glue
-  [mh.name]: 219, // Mold Hardener
-  [ml.name]: 65, // Mold Lubricant
-  [basic.oo.name]: 0, // Oriharukon Ore
+  [mg.name]: 75, // Mold Glue
+  [mh.name]: 241, // Mold Hardener
+  [ml.name]: 71, // Mold Lubricant
+  [basic.oo.name]: 19, // Oriharukon Ore
 
   [basic.silverMold.name]: 2, // Silver Mold
 
-  [basic.sn.name]: 3316, // Silver Nugget
-  [basic.st.name]: 0, // Steel
+  [basic.sn.name]: 3495, // Silver Nugget
+  [basic.st.name]: 16, // Steel
 
-  [basic.steelMold.name]: 3, // Steel Mold
+  [basic.steelMold.name]: 8, // Steel Mold
 
-  [basic.stt.name]: 4383, // Stem
-  [basic.sop.name]: 109, // Stone of Purity
-  [basic.su.name]: 2803, // Suede
+  [basic.stt.name]: 5246, // Stem
+  [basic.sop.name]: 60, // Stone of Purity
+  [basic.su.name]: 3282, // Suede
 
-  [basic.sck.name]: 21 + 441, // Synthetic Cokes
+  [basic.sck.name]: 25, // Synthetic Cokes
 
-  [basic.ton.name]: 580, // Tons
-  [basic.tr.name]: 16801, // Thread
-  [basic.va.name]: 715, // Varnish
-  [vop.name]: 645,
+  [basic.ton.name]: 583, // Tons
+  [basic.tr.name]: 11469, // Thread
+  [basic.va.name]: 4723, // Varnish
+  [vop.name]: 754,
   [warholder.name]: 4,
 
   // buy
@@ -78,11 +78,11 @@ let haveMats = {
 
 // ## Arcana Mace x3
 // --------------------------------------
-// Recipe                1  | 3   | 1 (Pegar no NPC)
+// Recipe                1  | 3   | 2 (Pegar no NPC)
 // Warsmith Holder      4   | 12  | 0
-// Arcana Mace Head     17  | 51  | 12
+// Arcana Mace Head     17  | 51  | 51
 // Gemstone S           43  | 129 | 0
-// High Grade Suede     77  | 231 | 0
+// High Grade Suede     77  | 231 | 186
 // Enria                77  | 231 | 0
 // Synthetic Cokes      154 | 462 | 0
 // Mithril Alloy        154 | 462 | 0
@@ -139,8 +139,8 @@ craftAMsAndTTs();
 
 // process.exit(0);
 // needThisAmount(basic.dmp, 924);
-needThisAmount(fangs.sckFang, 441);
-needThisAmount(fangs.mitalloyFang, 432);
+needThisAmount(fangs.sckFang, 400);
+needThisAmount(fangs.mitalloyFang, 400);
 // needThisAmount(fangs.dmpFang, 924);
 
 // 5764 + 2937 = 8701
@@ -202,14 +202,24 @@ function craftAMsAndTTs() {
     totalMats[mat] = totalMats[mat] ? totalMats[mat] + q : q;
   });
 
-  console.log("# Remaining Mats");
-  console.log(r3);
+  // console.log("# Remaining Mats");
+  // console.log(r3);
 
   console.log("# Total Mats needed");
   // console.log(totalMats);
 
   const basicMats: { [name: string]: number } = {};
   const craftedMats: { [name: string]: number } = {};
+  const craftedMatsAdv: {
+    [name: string]: {
+      name: string;
+      q: number;
+      recipe?: {
+        name: string;
+        q: number;
+      }[];
+    };
+  } = {};
   const otherMats: { [name: string]: number } = {};
   const blacksmithMats: { [name: string]: number } = {};
 
@@ -222,6 +232,29 @@ function craftAMsAndTTs() {
           basicMats[ba.name] = totalMats[mat];
         } else if (ba.type === "crafted_mats") {
           craftedMats[ba.name] = totalMats[mat];
+          craftedMatsAdv[ba.name] = {
+            name: ba.name,
+            q: totalMats[mat],
+            // recipe: [],
+          };
+
+          // console.log(ba.name);
+
+          if (ba.recipe) {
+            const [item, r] = Object.values(ba.recipe);
+
+            let recipe: { name: string; q: number }[] = [];
+
+            for (let i of item) {
+              const { item, q } = i;
+              recipe.push({ name: item.name, q: q * totalMats[mat] });
+            }
+
+            craftedMatsAdv[ba.name].recipe = recipe;
+
+            // console.log("\n");
+            // console.log(totalMats[mat]);
+          }
         } else if (ba.type === "blacksmith") {
           blacksmithMats[ba.name] = totalMats[mat];
         } else {
@@ -230,18 +263,33 @@ function craftAMsAndTTs() {
       }
     });
   }
+  function logAll() {
+    console.log("## Basic Mats");
+    console.log(basicMats);
 
-  console.log("## Basic Mats");
-  console.log(basicMats);
+    console.log("## Crafted Mats");
+    console.log(craftedMats);
 
-  console.log("## Crafted Mats");
-  console.log(craftedMats);
+    Object.keys(craftedMatsAdv).forEach((cm) => {
+      console.log(`${cm} - ${craftedMatsAdv[cm].q}`);
 
-  console.log("## Blacksmith Mats");
-  console.log(blacksmithMats);
+      if (craftedMatsAdv[cm].recipe) {
+        craftedMatsAdv[cm].recipe.map((r) => {
+          // console.log(Object.values(r));
 
-  console.log("## Other Mats");
-  console.log(otherMats);
+          console.log(`-- ${r.name} - ${r.q} (${haveMats[r.name]})`);
+        });
+      }
+    });
+
+    console.log("## Blacksmith Mats");
+    console.log(blacksmithMats);
+
+    console.log("## Other Mats");
+    console.log(otherMats);
+  }
+
+  logAll();
 }
 
 function getRecipeList(recipe: Item["recipe"]): string {

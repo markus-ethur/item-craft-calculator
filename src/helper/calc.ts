@@ -56,7 +56,7 @@ export function needThisAmount(
   }
 
   calculate(item, amount);
-  console.log(`# Mats needed for - ${amount}x ${item.name}(s)`);
+  // console.log(`# Mats needed for - ${amount}x ${item.name}(s)`);
 
   const sortedMats: { [name: string]: number } = {};
 
