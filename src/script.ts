@@ -19,14 +19,14 @@ import { needThisAmount } from "./helper/calc";
 
 let haveMats = {
   [basic.an.name]: 224, // Adamantite Nugget
-  [basic.ab.name]: 3167, // Animal Bone
-  [basic.ans.name]: 9445, // Animal Skin
+  [basic.ab.name]: 3474, // Animal Bone
+  [basic.ans.name]: 10025, // Animal Skin
   [basic.amh.name]: 53, // Arcana Mace Head
-  [basic.af.name]: 194, // Asofe
-  [basic.bh.name]: 430, // Braided Hemp
-  [basic.ch.name]: 2149, // Charcoal
-  [co.name]: 128, // Coal
-  [basic.cbp.name]: 1524, // Coarse Bone Powder
+  [basic.af.name]: 276, // Asofe
+  [basic.bh.name]: 431, // Braided Hemp
+  [basic.ch.name]: 2159, // Charcoal
+  [co.name]: 179, // Coal
+  [basic.cbp.name]: 1559, // Coarse Bone Powder
   [ck.name]: 1203, // Cokes
   // compound braid ??
   [basic.cor.name]: 592, // Cord
@@ -35,36 +35,36 @@ let haveMats = {
   [basic.er.name]: 260, // Enria
   [basic.hgs.name]: 239, // High Grade Suede
   // leather
-  [basic.io.name]: 534, // Iron Ore
-  [basic.mf.name]: 3806, // Metallic Fiber
-  [basic.mt.name]: 2115, // Metallic Thread
+  [basic.io.name]: 624, // Iron Ore
+  [basic.mf.name]: 3830, // Metallic Fiber
+  [basic.mt.name]: 2120, // Metallic Thread
 
-  [basic.mitalloy.name]: 31, // Mithril Alloy
+  [basic.mitalloy.name]: 401, // Mithril Alloy
   [mo.name]: 16, // Mithril Ore
   // mold
-  [mg.name]: 75, // Mold Glue
-  [mh.name]: 241, // Mold Hardener
-  [ml.name]: 71, // Mold Lubricant
-  [basic.oo.name]: 19, // Oriharukon Ore
+  [mg.name]: 0, // Mold Glue
+  [mh.name]: 81, // Mold Hardener
+  [ml.name]: 0, // Mold Lubricant
+  [basic.oo.name]: 88, // Oriharukon Ore
 
   [basic.silverMold.name]: 2, // Silver Mold
 
-  [basic.sn.name]: 3495, // Silver Nugget
+  [basic.sn.name]: 3561, // Silver Nugget
   [basic.st.name]: 16, // Steel
 
   [basic.steelMold.name]: 8, // Steel Mold
 
-  [basic.stt.name]: 5246, // Stem
-  [basic.sop.name]: 60, // Stone of Purity
-  [basic.su.name]: 3282, // Suede
+  [basic.stt.name]: 5580, // Stem
+  [basic.sop.name]: 392, // Stone of Purity
+  [basic.su.name]: 3385, // Suede
 
-  [basic.sck.name]: 25, // Synthetic Cokes
+  [basic.sck.name]: 65, // Synthetic Cokes
 
-  [basic.ton.name]: 583, // Tons
-  [basic.tr.name]: 11469, // Thread
-  [basic.va.name]: 4723, // Varnish
-  [vop.name]: 754,
-  [warholder.name]: 4,
+  [basic.ton.name]: 585, // Tons
+  [basic.tr.name]: 11781, // Thread
+  [basic.va.name]: 6912, // Varnish
+  [vop.name]: 594, // Varnish of Purity
+  [warholder.name]: 12,
 
   // buy
   [basic.ttRingGem.name]: 102, // 40k
@@ -76,55 +76,32 @@ let haveMats = {
   // [mitalloy.name]: 462,
 };
 
-// ## Arcana Mace x3
+// ## All - Unity / 3x / Farmed
 // --------------------------------------
-// Recipe                1  | 3   | 2 (Pegar no NPC)
-// Warsmith Holder      4   | 12  | 0
-// Arcana Mace Head     17  | 51  | 51
-// Gemstone S           43  | 129 | 0
-// High Grade Suede     77  | 231 | 186
-// Enria                77  | 231 | 0
-// Synthetic Cokes      154 | 462 | 0
-// Mithril Alloy        154 | 462 | 0
-// Crystal S            211 | 633 | 0
-// Durable Metal Plate  308 | 924 | 175
+// | 3   | 2    - Recipe AM
+// | 3   | 1    - Recipe Neck
+// | 6   | 6    x- Recipe Ear
+// | 6   | 3    - Recipe Ring
+// | 12  | 12   x- Warsmith Holder
+// | 6   | 0    - Warsmith Mold
+// | 3   | 0    - Maestro Mold
+// | 51  | 51   x- Arcana Mace Head
+// | 51  | 51   x- Tateossian Necklace Chain
+// | 51  | 51   x- Tateossian Earring Part
+// | 51  | 51   x- Tateossian Ring Gem
+// | 156 | 54   x- Gemstone S (100k AA , 10,2kk)
+// | 231 | 231  x- High Grade Suede
+// | 231 | 231  x- Enria
+// | 210 | 210  x- Thons
+// | 462 | 65   - Synthetic Cokes
+// | 462 | 401  - Mithril Alloy
+// | 795 | 0    - Crystal S
+// | 924 | 175  - Durable Metal Plate
+// | 630 | 0    - Varnish of Purity
+// | 1050| 1050 x- Metallic Fiber
 // --------------------------------------
 
-// ## Tateossian Necklace x3
-// ----------------------------------------
-// Recipe                     1 | 3   | 1
-// Warsmith Mold              1 | 3   | 0
-// Gemstone S                 4 | 12  | 0
-// Tateossian Necklace Chain 17 | 51  | 0
-// Crystal S                 24 | 72  | 0
-// Thons                     32 | 96  | 0
-// Varnish of Purity         96 | 288 | 0
-// Metallic Fiber           160 | 480 | 0
-// ----------------------------------------
-
-// ## Tateossian Earring x3
-// ---------------------------------------
-// Recipe                    1 | 6   | 6 - OK
-// Warsmith Mold             1 | 3   | 0
-// Tateossian Earring Part  17 | 51  | 0
-// Gemstone S                3 | 9   | 0
-// Crystal S                18 | 54  | 0
-// Thons                    21 | 63  | 0
-// Varnish of Purity        63 | 189 | 0
-// Metallic Fiber          105 | 315 | 0
-// ---------------------------------------
-
-// ## Tateossian Ring x3
-// ------------------------------------
-// Recipe                  1 | 6   | 3
-// Maestro Mold            1 | 3   | 0
-// Tateossian Ring Gem    17 | 51  | 0
-// Gemstone S              2 | 6   | 0
-// Crystal S              12 | 36  | 0
-// Thons                  17 | 51  | 0
-// Varnish of Purity      51 | 153 | 0
-// Metallic Fiber         85 | 255 | 0
-// ------------------------------------
+// 349 oriharukon ore
 
 // console.log("---------------------------------");
 // console.log(getRecipeList(basic.ArcanaMace.recipe));
@@ -133,14 +110,16 @@ let haveMats = {
 // console.log(getRecipeList(basic.TTSRing.recipe));
 // console.log("---------------------------------");
 
+// needThisAmount(basic.maeholder, 16, haveMats);
+
 craftAMsAndTTs();
 
 // needThisAmount(basic.dmp, 757, haveMats);
 
 // process.exit(0);
 // needThisAmount(basic.dmp, 924);
-needThisAmount(fangs.sckFang, 400);
-needThisAmount(fangs.mitalloyFang, 400);
+needThisAmount(fangs.sckFang, 397);
+needThisAmount(fangs.mitalloyFang, 61);
 // needThisAmount(fangs.dmpFang, 924);
 
 // 5764 + 2937 = 8701
