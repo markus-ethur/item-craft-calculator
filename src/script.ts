@@ -18,52 +18,52 @@ import {
 import { needThisAmount } from "./helper/calc";
 
 let haveMats = {
-  [basic.an.name]: 224, // Adamantite Nugget
-  [basic.ab.name]: 3474, // Animal Bone
-  [basic.ans.name]: 10025, // Animal Skin
+  [basic.an.name]: 234, // Adamantite Nugget
+  [basic.ab.name]: 3964, // Animal Bone
+  [basic.ans.name]: 11507, // Animal Skin
   [basic.amh.name]: 53, // Arcana Mace Head
-  [basic.af.name]: 276, // Asofe
-  [basic.bh.name]: 431, // Braided Hemp
+  [basic.af.name]: 671, // Asofe
+  [basic.bh.name]: 458, // Braided Hemp
   [basic.ch.name]: 2159, // Charcoal
-  [co.name]: 179, // Coal
-  [basic.cbp.name]: 1559, // Coarse Bone Powder
-  [ck.name]: 1203, // Cokes
+  [co.name]: 729, // Coal
+  [basic.cbp.name]: 1036, // Coarse Bone Powder
+  [ck.name]: 940, // Cokes
   // compound braid ??
-  [basic.cor.name]: 592, // Cord
-  [basic.dmp.name]: 239, // Durable Metal Plate
+  [basic.cor.name]: 605, // Cord
+  [basic.dmp.name]: 241, // Durable Metal Plate
   // crafted leather
-  [basic.er.name]: 260, // Enria
-  [basic.hgs.name]: 239, // High Grade Suede
+  [basic.er.name]: 263, // Enria
+  [basic.hgs.name]: 243, // High Grade Suede
   // leather
-  [basic.io.name]: 624, // Iron Ore
-  [basic.mf.name]: 3830, // Metallic Fiber
-  [basic.mt.name]: 2120, // Metallic Thread
+  [basic.io.name]: 5361, // Iron Ore
+  [basic.mf.name]: 3874, // Metallic Fiber
+  [basic.mt.name]: 2121, // Metallic Thread
 
-  [basic.mitalloy.name]: 401, // Mithril Alloy
-  [mo.name]: 16, // Mithril Ore
+  [basic.mitalloy.name]: 471, // Mithril Alloy
+  [mo.name]: 3428, // Mithril Ore
   // mold
-  [mg.name]: 0, // Mold Glue
-  [mh.name]: 81, // Mold Hardener
-  [ml.name]: 0, // Mold Lubricant
-  [basic.oo.name]: 88, // Oriharukon Ore
+  [mg.name]: 6, // Mold Glue
+  [mh.name]: 91, // Mold Hardener
+  [ml.name]: 1, // Mold Lubricant
+  [basic.oo.name]: 323, // Oriharukon Ore
 
   [basic.silverMold.name]: 2, // Silver Mold
 
-  [basic.sn.name]: 3561, // Silver Nugget
-  [basic.st.name]: 16, // Steel
+  [basic.sn.name]: 3690, // Silver Nugget
+  [basic.st.name]: 23, // Steel
 
   [basic.steelMold.name]: 8, // Steel Mold
 
-  [basic.stt.name]: 5580, // Stem
-  [basic.sop.name]: 392, // Stone of Purity
-  [basic.su.name]: 3385, // Suede
+  [basic.stt.name]: 5855, // Stem
+  [basic.sop.name]: 276, // Stone of Purity
+  [basic.su.name]: 3748, // Suede
 
-  [basic.sck.name]: 65, // Synthetic Cokes
+  [basic.sck.name]: 153, // Synthetic Cokes
 
-  [basic.ton.name]: 585, // Tons
-  [basic.tr.name]: 11781, // Thread
-  [basic.va.name]: 6912, // Varnish
-  [vop.name]: 594, // Varnish of Purity
+  [basic.ton.name]: 588, // Tons
+  [basic.tr.name]: 13210, // Thread
+  [basic.va.name]: 9895, // Varnish
+  [vop.name]: 738, // Varnish of Purity
   [warholder.name]: 12,
 
   // buy
@@ -101,7 +101,11 @@ let haveMats = {
 // | 1050| 1050 x- Metallic Fiber
 // --------------------------------------
 
-// 349 oriharukon ore
+// 309 oriharukon ore
+// 30 mold glue
+// 6 enria
+// 5900 iron ore
+// 3410 mithril ore
 
 // console.log("---------------------------------");
 // console.log(getRecipeList(basic.ArcanaMace.recipe));
@@ -114,21 +118,12 @@ let haveMats = {
 
 craftAMsAndTTs();
 
-// needThisAmount(basic.dmp, 757, haveMats);
+needThisAmount(basic.dmp, 685, haveMats);
 
-// process.exit(0);
 // needThisAmount(basic.dmp, 924);
-needThisAmount(fangs.sckFang, 397);
+needThisAmount(fangs.sckFang, 309);
 needThisAmount(fangs.mitalloyFang, 61);
 // needThisAmount(fangs.dmpFang, 924);
-
-// 5764 + 2937 = 8701
-
-// console.log(totalMats);
-
-// needThisAmount(basic.dmp, 301);
-// needThisAmount(basic.TTSEar, 6);
-// needThisAmount(basic.TTSRing, 6);
 
 // 488 ring
 // 732 ear
@@ -148,7 +143,7 @@ function craftAMsAndTTs() {
 
   const { remainingMats: r1, sortedMats: s1 } = needThisAmount(
     basic.TTSNecklace,
-    3,
+    1,
     rAM
   );
   const { remainingMats: r2, sortedMats: s2 } = needThisAmount(
@@ -158,7 +153,7 @@ function craftAMsAndTTs() {
   );
   const { remainingMats: r3, sortedMats: s3 } = needThisAmount(
     basic.TTSRing,
-    6,
+    3,
     r2
   );
 
